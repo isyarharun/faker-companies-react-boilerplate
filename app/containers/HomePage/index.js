@@ -113,11 +113,9 @@ export default function HomePage() {
 
   return (
     <div>
-      <Row>
-        <div className="title-wrapper">
-          <span>Build A List</span>
-          <span> {dataCount} Companies Found</span>
-        </div>
+      <Row className="title-wrapper">
+        <Col span="4">Build A List</Col>
+        <Col span="20"> {dataCount} Companies Found</Col>
       </Row>
       <Row>
         <Col span="4" className="grey-border">
