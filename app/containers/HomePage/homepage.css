@@ -1,0 +1,32 @@
+.title-wrapper {
+  margin: 20px;
+  font-size: 20px;
+}
+
+.content-wrapper {
+  display: flex;
+}
+
+.pad-20 {
+  padding: 20px;
+}
+
+.sidebar-label {
+  display: block;
+}
+
+.ant-select {
+  width: 100%;
+}
+
+.mar-10 {
+  margin: 10px;
+}
+
+.grey-border {
+  border: solid 1px grey;
+}
+
+.filter-label {
+  display: block;
+}

@@ -6,6 +6,7 @@ const logger = require('./logger');
 const argv = require('./argv');
 const port = require('./port');
 const setup = require('./middlewares/frontendMiddleware');
+const corsAnywere = require('cors-anywhere');
 const isDev = process.env.NODE_ENV !== 'production';
 const ngrok =
   (isDev && process.env.ENABLE_TUNNEL) || argv.tunnel
@@ -13,6 +14,16 @@ const ngrok =
     : false;
 const { resolve } = require('path');
 const app = express();
+
+corsAnywere
+  .createServer({
+    originWhitelist: [], // Allow all origins
+    requireHeader: ['origin', 'x-requested-with'],
+    removeHeaders: ['cookie', 'cookie2'],
+  })
+  .listen(8080, '0.0.0.0', function() {
+    console.log(`Running CORS Anywhere on 0.0.0.0:8080`);
+  });
 
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
 // app.use('/api', myApi);
